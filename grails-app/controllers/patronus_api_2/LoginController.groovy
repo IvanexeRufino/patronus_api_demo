@@ -29,7 +29,7 @@ class LoginController {
             render(view:"index.gsp", model: [userInvalid: true])
         } else {
             println("TA VALIDO")
-            render(view:"_main.gsp")
+            redirect(controller: "liveAlerts")
         }
         print(json)
     }
