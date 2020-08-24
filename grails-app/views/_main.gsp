@@ -1,15 +1,19 @@
 < !doctype html>
 <html>
 <head>
-    <title>Geolocation API: Technotip.com</title>
-    <meta charset="utf-8"/>
-    <link href="css/myStyle.css" rel="stylesheet"/>
-    <script src="js/jquery-1.10.1.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script src="js/myScript.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
-<p id="map"></p>
-<button>Stop</button>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibmF0aXRvIiwiYSI6ImNrZTY4bTBvNjFhZ2Yyc213N29kdXg2c2QifQ.42DIhYrm9VcNg2RP7rZCrw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11'
+    });
+</script>
+
 </body>
 </html>

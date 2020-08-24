@@ -8,13 +8,13 @@ body {
 }
 
 .login-box {
-    opacity: 0.95;
+    opacity: 0.9;
     width: 320px;
-    height: 337px;
+    height: 355px;
     background: white;
     border-color: #124d65;
     border-style: solid;
-    border-width: thin;
+    border-width: 2px;
     color: #124d65;
     top: 50%;
     left: 50%;
@@ -30,7 +30,7 @@ body {
     border-radius: 50%;
     border-color: #124d65;
     border-style: solid;
-    border-width: thin;
+    border-width: 2.5px;
     position: absolute;
     top: -50px;
     left: calc(50% - 50px);
@@ -73,6 +73,7 @@ body {
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
+    margin-top: 10px;
 }
 
 .login-box input[type="submit"]:hover {
