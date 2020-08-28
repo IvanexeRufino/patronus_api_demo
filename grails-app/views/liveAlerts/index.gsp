@@ -1,17 +1,33 @@
+<asset:stylesheet src="main_operador.css"/>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Display a map</title>
+    <meta charset="utf-8">
+    <title>Patronus</title>
+    <link rel="icon" type="image/x-ico" href="/assets/favicon.ico">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
     <style>
     body { margin: 0; padding: 0; }
-    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    #map { position: absolute; top: 0; bottom: 0; left: 20% ; width: 80%; }
     </style>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 <body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Patronus</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-exclamation-circle"></i>Alerta 1</a></li>
+            <li><a href="#"><i class="fas fa-exclamation-circle"></i>Alerta 2</a></li>
+            <li><a href="#"><i class="fas fa-exclamation-circle"></i>Alerta 3</a></li>
+        </ul>
+    </div>
+</div>
+
 <div id="map"></div>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibmF0aXRvIiwiYSI6ImNrZTY4bTBvNjFhZ2Yyc213N29kdXg2c2QifQ.42DIhYrm9VcNg2RP7rZCrw';
