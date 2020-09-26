@@ -31,6 +31,8 @@ dependencies {
     compile "org.grails:grails-core"
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile 'org.grails.plugins:spring-security-core:4.0.0.RC2'
+    compile 'org.grails.plugins:spring-security-ui:4.0.0.M1'
     compile "org.grails:grails-web-boot"
     compile "org.grails:grails-logging"
     compile "org.grails:grails-plugin-rest"

@@ -15,7 +15,7 @@ class LoginController {
         def user = params.user
         def pass = params.pass
 
-        def resp = rest.post("https://fierce-caverns-84695.herokuapp.com/companies/30-71500212-0/users/sign_in") {
+        def resp = rest.post("https://fierce-caverns-84695.herokuapp.com/companies/sign_in") {
             contentType("application/json")
             json {
                 mail = user
@@ -24,7 +24,7 @@ class LoginController {
         }
         Map json = resp.json
 
-        if(json.statusCode == 400) {
+        if(json.statusCode) {
             render(view:"index.gsp", model: [userInvalid: true])
         } else {
             redirect(controller: "liveAlerts")
