@@ -1,34 +1,22 @@
 package patronus_api_2
 
-import grails.plugins.rest.client.RestBuilder
-import org.springframework.util.LinkedMultiValueMap
-import org.springframework.util.MultiValueMap
-
-class LoginController {
-
-    def rest = new RestBuilder()
-    
-    def index() {}
+class LoginController extends grails.plugin.springsecurity.LoginController {
 
     def auth() {
 
-        def user = params.user
-        def pass = params.pass
+        ConfigObject conf = getConf()
 
-        def resp = rest.post("https://fierce-caverns-84695.herokuapp.com/companies/sign_in") {
-            contentType("application/json")
-            json {
-                mail = user
-                password = pass
-            }
+        if (springSecurityService.isLoggedIn()) {
+            redirect uri: conf.successHandler.defaultTargetUrl
+            return
         }
-        Map json = resp.json
 
-        if(json.statusCode) {
-            render(view:"index.gsp", model: [userInvalid: true])
-        } else {
-            redirect(controller: "liveAlerts")
-        }
-        print(json)
+
+        String postUrl = request.contextPath + conf.apf.filterProcessesUrl
+        render view: 'auth', model: [postUrl: postUrl,
+                                     rememberMeParameter: conf.rememberMe.parameter,
+                                     usernameParameter: conf.apf.usernameParameter,
+                                     passwordParameter: conf.apf.passwordParameter,
+                                     gspLayout: conf.gsp.layoutAuth]
     }
 }
